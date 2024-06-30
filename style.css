@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+}
+
+.all_icon_container{
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.icon_container{
+    display: flex;
+}
+
+.icon_container .icon{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 20px;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon_container .icon span{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.icon_container .icon:hover span p{
+    color: #fff;
+}
+
+.icon_container .icon span p{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.icon_container .icon .tooltip{
+    position: absolute;
+    font-size: 20px;
+    color: #ffffff;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 8px 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+
+    top: 0;
+    pointer-events:none;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon_container .icon:hover .tooltip{
+    opacity: 1;
+    pointer-events: all;
+    top: -60px;
+}
+
+.icon_container .icon .tooltip::before{
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    top: 33px;
+    left: 50%;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.icon_container .icon:hover span,
+.icon_container .icon:hover .tooltip{
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+.icon_container .fb:hover span,
+.icon_container .fb:hover .tooltip,
+.icon_container .fb:hover .tooltip::before{
+    background: #3b3999;
+}
+
+.icon_container .insta:hover span,
+.icon_container .insta:hover .tooltip,
+.icon_container .insta:hover .tooltip::before{
+    background: #ff6f00;
+}
+
+.icon_container .git:hover span,
+.icon_container .git:hover .tooltip,
+.icon_container .git:hover .tooltip::before{
+    background: #21201f;
+}
+
+.icon_container .li:hover span,
+.icon_container .li:hover .tooltip,
+.icon_container .li:hover .tooltip::before{
+    background: #09609e;
+}
